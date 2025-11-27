@@ -15,7 +15,12 @@ const app = express();
 
 // Middleware
 app.use(express.json()); // Parse JSON request body
-app.use(cors()); // Enable Cross-Origin Resource Sharing
+app.use(
+  cors({
+    origin: "*",
+    credentials: true,
+  })
+); // Enable Cross-Origin Resource Sharing
 if (process.env.NODE_ENV !== "production") {
   app.use(morgan("dev")); // Log requests in dev mode
 }
