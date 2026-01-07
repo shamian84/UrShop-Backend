@@ -15,12 +15,17 @@ const app = express();
 
 // Middleware
 app.use(express.json()); // Parse JSON request body
+const allowedOrigins = [
+  "https://ur-shop-frontend.vercel.app",
+  /\.vercel\.app$/, // This allows ANY URL ending in .vercel.app
+];
+
 app.use(
   cors({
-    origin: "https://ur-shop-frontend.vercel.app/",
+    origin: allowedOrigins,
     credentials: true,
   })
-); // Enable Cross-Origin Resource Sharing
+);
 if (process.env.NODE_ENV !== "production") {
   app.use(morgan("dev")); // Log requests in dev mode
 }
