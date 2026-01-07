@@ -22,11 +22,7 @@ const allowedOrigins = [
 
 app.use(
   cors({
-<<<<<<< HEAD
     origin: allowedOrigins,
-=======
-    origin: "https://ur-shop-frontend.vercel.app",
->>>>>>> d3eddf4df53163f05de416f79da1a98b0b3af46e
     credentials: true,
   })
 );
