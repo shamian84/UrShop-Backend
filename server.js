@@ -17,7 +17,7 @@ const app = express();
 app.use(express.json()); // Parse JSON request body
 app.use(
   cors({
-    origin: "https://ur-shop-frontend.vercel.app/",
+    origin: "https://ur-shop-frontend.vercel.app",
     credentials: true,
   })
 ); // Enable Cross-Origin Resource Sharing
